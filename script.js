@@ -55,6 +55,83 @@ const drivingBrands = {
         advantage: '全栈自研，感知融合能力强，复杂场景处理能力优异',
         disadvantage: '仅搭载部分车型，生态覆盖有限'
     },
+    'byd': {
+        name: '比亚迪',
+        solution: '天神之眼',
+        origin: '中国',
+        level: 'L2-L3',
+        sensors: '摄像头+雷达+激光雷达(高端车型)',
+        features: '高速辅助驾驶、城市辅助驾驶、自动变道、自动泊车、智能召唤',
+        price: '天神之眼C免费标配，天神之眼A/B可选装',
+        advantage: '覆盖全价格区间，硬件免费，普及度高',
+        disadvantage: '高阶功能有待验证，算法成熟度仍需提升'
+    },
+    'greatwall': {
+        name: '长城',
+        solution: '咖啡智驾 (Coffee Pilot)',
+        origin: '中国',
+        level: 'L2-L3',
+        sensors: '激光雷达+摄像头+雷达+超声波',
+        features: '高速辅助驾驶、城市辅助驾驶、自动变道、自动泊车、记忆泊车',
+        price: 'CoffeePilot Ultra选装约3万元',
+        advantage: '全车冗余设计，安全性高，场景覆盖广',
+        disadvantage: '品牌认知度有待提升，高端车型价格较高'
+    },
+    'geely': {
+        name: '吉利',
+        solution: '千里浩瀚',
+        origin: '中国',
+        level: 'L2+',
+        sensors: '激光雷达+摄像头+雷达+超声波',
+        features: '高速辅助驾驶、城市辅助驾驶、自动变道、自动泊车、遥控泊车',
+        price: '部分车型标配，高端版本约2万元',
+        advantage: '与沃尔沃技术共享，硬件配置高，性价比优',
+        disadvantage: '城市辅助驾驶能力仍需优化，数据积累不足'
+    },
+    'ford': {
+        name: '福特',
+        solution: 'BlueCruise',
+        origin: '美国',
+        level: 'L2+',
+        sensors: '摄像头+雷达+超声波',
+        features: '高速辅助驾驶、自动变道、自动泊车',
+        price: '选装包约2万元',
+        advantage: '高速公路自动驾驶体验流畅，安全性高',
+        disadvantage: '缺少激光雷达，城市辅助驾驶能力有限'
+    },
+    'gm': {
+        name: '通用',
+        solution: 'Super Cruise',
+        origin: '美国',
+        level: 'L2+',
+        sensors: '摄像头+雷达+高精度地图',
+        features: '高速辅助驾驶、自动变道、自动泊车',
+        price: '选装包约3万元',
+        advantage: '高精度地图加持，驾驶体验稳定，安全性高',
+        disadvantage: '覆盖路段有限，升级费用较高'
+    },
+    'volvo': {
+        name: '沃尔沃',
+        solution: 'Pilot Assist',
+        origin: '瑞典',
+        level: 'L2',
+        sensors: '摄像头+雷达+超声波',
+        features: '自适应巡航、车道保持、自动紧急制动、碰撞预警',
+        price: '部分车型标配',
+        advantage: '安全性能优异，系统成熟可靠，豪华品牌背书',
+        disadvantage: '辅助驾驶功能相对保守，缺少高阶自动驾驶能力'
+    },
+    'hyundai': {
+        name: '现代',
+        solution: 'Highway Driving Assist',
+        origin: '韩国',
+        level: 'L2',
+        sensors: '摄像头+雷达+超声波',
+        features: '自适应巡航、车道保持、自动变道、自动泊车',
+        price: '部分车型标配',
+        advantage: '性价比高，系统稳定可靠，燃油车混动车型均有搭载',
+        disadvantage: '高级自动驾驶功能有限，缺少激光雷达支持'
+    },
     'mercedes': {
         name: '奔驰',
         solution: 'DRIVE PILOT',
