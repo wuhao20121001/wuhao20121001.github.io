@@ -28,6 +28,48 @@
             <div class="container">
                 <h2>中外智能驾驶品牌方案</h2>
                 <p>以下是全球主流智能驾驶品牌及其方案的详细信息</p>
+                
+                <!-- 筛选功能 -->
+                <div class="filter-section">
+                    <h3>筛选条件</h3>
+                    <div class="filter-grid">
+                        <div class="filter-item">
+                            <label for="originFilter">品牌 origin</label>
+                            <select id="originFilter">
+                                <option value="">全部</option>
+                                <option value="中国">中国</option>
+                                <option value="美国">美国</option>
+                                <option value="德国">德国</option>
+                                <option value="日本">日本</option>
+                                <option value="瑞典">瑞典</option>
+                                <option value="韩国">韩国</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="levelFilter">自动驾驶等级</label>
+                            <select id="levelFilter">
+                                <option value="">全部</option>
+                                <option value="L2">L2</option>
+                                <option value="L2+">L2+</option>
+                                <option value="L2-L3">L2-L3</option>
+                                <option value="L3">L3</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="sensorFilter">传感器配置</label>
+                            <select id="sensorFilter">
+                                <option value="">全部</option>
+                                <option value="激光雷达">激光雷达</option>
+                                <option value="摄像头">摄像头为主</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-actions">
+                        <button id="filterBtn" class="btn btn-primary">应用筛选</button>
+                        <button id="resetBtn" class="btn btn-secondary">重置筛选</button>
+                    </div>
+                </div>
+                
                 <div class="brands-list" id="brandsList">
                     <!-- 品牌列表将通过JavaScript动态生成 -->
                 </div>
