@@ -33,17 +33,35 @@
                     <div class="compare-selector">
                         <h3>选择要对比的品牌</h3>
                         <div class="brand-selectors">
-                            <select class="brand-selector"></select>
-                            <select class="brand-selector"></select>
-                            <select class="brand-selector"></select>
-                            <select class="brand-selector"></select>
+                            <div class="brand-selector-item">
+                                <label for="brand1">品牌 1</label>
+                                <select class="brand-selector" id="brand1"></select>
+                            </div>
+                            <div class="brand-selector-item">
+                                <label for="brand2">品牌 2</label>
+                                <select class="brand-selector" id="brand2"></select>
+                            </div>
+                            <div class="brand-selector-item">
+                                <label for="brand3">品牌 3</label>
+                                <select class="brand-selector" id="brand3"></select>
+                            </div>
+                            <div class="brand-selector-item">
+                                <label for="brand4">品牌 4</label>
+                                <select class="brand-selector" id="brand4"></select>
+                            </div>
                         </div>
                         <button id="compareBtn" class="btn btn-primary">开始对比</button>
                     </div>
                     
-                    <table id="compareTable" class="compare-table">
-                        <!-- 对比表格将通过JavaScript动态生成 -->
-                    </table>
+                    <div class="compare-table-container">
+                        <table id="compareTable" class="compare-table">
+                            <!-- 对比表格将通过JavaScript动态生成 -->
+                        </table>
+                    </div>
+                    
+                    <div class="compare-results" id="compareResults">
+                        <!-- 对比结果将通过JavaScript动态生成 -->
+                    </div>
                 </div>
             </div>
         </section>
