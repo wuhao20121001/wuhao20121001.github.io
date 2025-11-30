@@ -46,13 +46,13 @@ const drivingBrands = {
     },
     'huawei': {
         name: '华为',
-        solution: 'ADS 2.0 (Advanced Driving System)',
+        solution: '乾崑智驾 ADS 4',
         origin: '中国',
         level: 'L2+',
         sensors: '激光雷达+摄像头+雷达+超声波',
-        features: '高速NCA、城市NCA、自动变道、自动泊车、代客泊车',
-        price: 'ADS 2.0软件包约3.6万元',
-        advantage: '全栈自研，感知融合能力强，复杂场景处理能力优异',
+        features: '高速NCA、城市NCA、自动变道、自动泊车、代客泊车、生态级安全',
+        price: 'ADS 4.0软件包约4万元',
+        advantage: '全栈自研，感知融合能力强，复杂场景处理能力优异，生态级安全',
         disadvantage: '仅搭载部分车型，生态覆盖有限'
     },
     'byd': {
@@ -336,6 +336,15 @@ function initBrandsPage() {
         const brandItem = document.createElement('div');
         brandItem.className = 'brand-item';
         
+        // 为华为品牌添加特殊背景图片
+        if (key === 'huawei') {
+            brandItem.style.backgroundImage = 'url("huawei-ads4.jpg")';
+            brandItem.style.backgroundSize = 'cover';
+            brandItem.style.backgroundPosition = 'center';
+            brandItem.style.color = 'white';
+            brandItem.style.textShadow = '0 2px 4px rgba(0,0,0,0.5)';
+        }
+        
         brandItem.innerHTML = `
             <h3>${brand.name}</h3>
             <p><strong>方案名称:</strong> ${brand.solution}</p>
@@ -371,8 +380,9 @@ function showBrandDetail(brandKey) {
     `;
     
     const modalContent = document.createElement('div');
-    modalContent.style.cssText = `
-        background-color: white;
+    
+    // 为华为品牌的详情弹窗添加特殊样式
+    let contentStyle = `
         padding: 2rem;
         border-radius: 8px;
         max-width: 600px;
@@ -380,6 +390,25 @@ function showBrandDetail(brandKey) {
         max-height: 80%;
         overflow-y: auto;
     `;
+    
+    let textColor = '#333';
+    
+    if (brandKey === 'huawei') {
+        contentStyle += `
+            background-image: url("huawei-ads4.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        `;
+        textColor = 'white';
+    } else {
+        contentStyle += `
+            background-color: white;
+        `;
+    }
+    
+    modalContent.style.cssText = contentStyle;
     
     modalContent.innerHTML = `
         <h2>${brand.name} - ${brand.solution}</h2>
@@ -392,7 +421,7 @@ function showBrandDetail(brandKey) {
             <p><strong>优势:</strong> ${brand.advantage}</p>
             <p><strong>劣势:</strong> ${brand.disadvantage}</p>
         </div>
-        <button id="closeModal" class="btn btn-primary" style="margin-top: 1rem;">关闭</button>
+        <button id="closeModal" class="btn btn-primary" style="margin-top: 1rem; color: ${textColor === 'white' ? '#333' : 'white'}; background-color: ${textColor === 'white' ? 'white' : '#667eea'}; border: ${textColor === 'white' ? 'none' : '2px solid white'};">关闭</button>
     `;
     
     modal.appendChild(modalContent);
