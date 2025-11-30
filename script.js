@@ -266,6 +266,22 @@ function updateCompareTable(brands) {
     // 清空现有表格内容
     compareTable.innerHTML = '';
     
+    // 如果没有选择品牌，显示提示信息
+    if (brands.length === 0) {
+        compareTable.innerHTML = `
+            <tr>
+                <td colspan="5" style="text-align: center; padding: 4rem; color: #64748b;">
+                    <h3>请选择至少一个品牌进行对比</h3>
+                    <p>使用上方的选择器选择要对比的品牌</p>
+                </td>
+            </tr>
+        `;
+        
+        // 清空对比结果
+        updateCompareResults([]);
+        return;
+    }
+    
     // 创建表头
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
@@ -321,6 +337,86 @@ function updateCompareTable(brands) {
     });
     
     compareTable.appendChild(tbody);
+    
+    // 生成对比结果分析
+    updateCompareResults(brands);
+}
+
+// 更新对比结果分析
+function updateCompareResults(brands) {
+    const compareResults = document.getElementById('compareResults');
+    if (!compareResults) return;
+    
+    // 清空现有结果
+    compareResults.innerHTML = '';
+    
+    // 如果没有选择品牌，不显示结果
+    if (brands.length === 0) {
+        return;
+    }
+    
+    // 添加结果标题
+    const resultTitle = document.createElement('h3');
+    resultTitle.textContent = '对比结果分析';
+    compareResults.appendChild(resultTitle);
+    
+    // 生成综合分析
+    const analysisCard = document.createElement('div');
+    analysisCard.className = 'result-card';
+    analysisCard.innerHTML = `
+        <h4>综合分析</h4>
+        <p>本次对比了 ${brands.length} 个智能驾驶方案，涵盖了 ${new Set(brands.map(b => b.origin)).size} 个国家/地区。</p>
+        <p>自动驾驶等级分布：${getLevelDistribution(brands)}</p>
+        <p>传感器配置：${getSensorDistribution(brands)}</p>
+    `;
+    compareResults.appendChild(analysisCard);
+    
+    // 生成优势对比
+    const advantageCard = document.createElement('div');
+    advantageCard.className = 'result-card';
+    advantageCard.innerHTML = `
+        <h4>优势对比</h4>
+        <ul>${brands.map(brand => `<li><strong>${brand.name}：</strong>${brand.advantage}</li>`).join('')}</ul>
+    `;
+    compareResults.appendChild(advantageCard);
+    
+    // 生成劣势对比
+    const disadvantageCard = document.createElement('div');
+    disadvantageCard.className = 'result-card';
+    disadvantageCard.innerHTML = `
+        <h4>劣势对比</h4>
+        <ul>${brands.map(brand => `<li><strong>${brand.name}：</strong>${brand.disadvantage}</li>`).join('')}</ul>
+    `;
+    compareResults.appendChild(disadvantageCard);
+    
+    // 生成价格对比
+    const priceCard = document.createElement('div');
+    priceCard.className = 'result-card';
+    priceCard.innerHTML = `
+        <h4>价格对比</h4>
+        <ul>${brands.map(brand => `<li><strong>${brand.name}：</strong>${brand.price}</li>`).join('')}</ul>
+    `;
+    compareResults.appendChild(priceCard);
+}
+
+// 获取自动驾驶等级分布
+function getLevelDistribution(brands) {
+    const levels = brands.map(b => b.level);
+    const counts = {};
+    
+    levels.forEach(level => {
+        counts[level] = (counts[level] || 0) + 1;
+    });
+    
+    return Object.entries(counts).map(([level, count]) => `${level} (${count}个)`).join(', ');
+}
+
+// 获取传感器配置分布
+function getSensorDistribution(brands) {
+    const hasLidar = brands.filter(b => b.sensors.includes('激光雷达')).length;
+    const cameraBased = brands.filter(b => b.sensors.includes('摄像头为主')).length;
+    
+    return `激光雷达配置：${hasLidar}个，摄像头为主：${cameraBased}个`;
 }
 
 // 初始化品牌列表页面
@@ -328,11 +424,105 @@ function initBrandsPage() {
     const brandsList = document.getElementById('brandsList');
     if (!brandsList) return;
     
+    // 初始化筛选功能
+    initFilters();
+    
+    // 显示所有品牌
+    displayBrands(drivingBrands);
+}
+
+// 初始化筛选功能
+function initFilters() {
+    const originFilter = document.getElementById('originFilter');
+    const levelFilter = document.getElementById('levelFilter');
+    const sensorFilter = document.getElementById('sensorFilter');
+    const filterBtn = document.getElementById('filterBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    
+    // 筛选按钮点击事件
+    filterBtn.addEventListener('click', applyFilters);
+    
+    // 重置按钮点击事件
+    resetBtn.addEventListener('click', resetFilters);
+    
+    // 筛选条件变化事件
+    originFilter.addEventListener('change', applyFilters);
+    levelFilter.addEventListener('change', applyFilters);
+    sensorFilter.addEventListener('change', applyFilters);
+}
+
+// 应用筛选条件
+function applyFilters() {
+    const originFilter = document.getElementById('originFilter').value;
+    const levelFilter = document.getElementById('levelFilter').value;
+    const sensorFilter = document.getElementById('sensorFilter').value;
+    
+    // 筛选品牌
+    const filteredBrands = {};
+    
+    for (const [key, brand] of Object.entries(drivingBrands)) {
+        let match = true;
+        
+        // 品牌 origin筛选
+        if (originFilter && brand.origin !== originFilter) {
+            match = false;
+        }
+        
+        // 自动驾驶等级筛选
+        if (levelFilter && !brand.level.includes(levelFilter)) {
+            match = false;
+        }
+        
+        // 传感器配置筛选
+        if (sensorFilter) {
+            if (sensorFilter === '激光雷达' && !brand.sensors.includes('激光雷达')) {
+                match = false;
+            } else if (sensorFilter === '摄像头' && !brand.sensors.includes('摄像头为主')) {
+                match = false;
+            }
+        }
+        
+        if (match) {
+            filteredBrands[key] = brand;
+        }
+    }
+    
+    // 显示筛选结果
+    displayBrands(filteredBrands);
+}
+
+// 重置筛选条件
+function resetFilters() {
+    document.getElementById('originFilter').value = '';
+    document.getElementById('levelFilter').value = '';
+    document.getElementById('sensorFilter').value = '';
+    
+    // 显示所有品牌
+    displayBrands(drivingBrands);
+}
+
+// 显示品牌列表
+function displayBrands(brands) {
+    const brandsList = document.getElementById('brandsList');
+    if (!brandsList) return;
+    
     // 清空现有内容
     brandsList.innerHTML = '';
     
+    // 如果没有匹配的品牌，显示提示信息
+    if (Object.keys(brands).length === 0) {
+        brandsList.innerHTML = `
+            <div style="text-align: center; padding: 4rem; color: #64748b;">
+                <h3>没有找到匹配的品牌</h3>
+                <p>请调整筛选条件后重试</p>
+                <button class="btn btn-primary" onclick="resetFilters()">重置筛选</button>
+            </div>
+        `;
+        return;
+    }
+    
     // 添加品牌列表
-    for (const [key, brand] of Object.entries(drivingBrands)) {
+    for (const [key, brand] of Object.entries(brands)) {
         const brandItem = document.createElement('div');
         brandItem.className = 'brand-item';
         
@@ -350,11 +540,23 @@ function initBrandsPage() {
             <p><strong>方案名称:</strong> ${brand.solution}</p>
             <p><strong>品牌 origin:</strong> ${brand.origin}</p>
             <p><strong>自动驾驶等级:</strong> ${brand.level}</p>
+            <p><strong>传感器配置:</strong> ${brand.sensors}</p>
             <p><strong>主要功能:</strong> ${brand.features.substring(0, 100)}...</p>
             <a href="#" class="btn btn-primary" onclick="showBrandDetail('${key}')">查看详情</a>
         `;
         
+        // 添加入场动画
+        brandItem.style.opacity = '0';
+        brandItem.style.transform = 'translateY(20px)';
+        
         brandsList.appendChild(brandItem);
+        
+        // 触发动画
+        setTimeout(() => {
+            brandItem.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            brandItem.style.opacity = '1';
+            brandItem.style.transform = 'translateY(0)';
+        }, Object.keys(brands).indexOf(key) * 100);
     }
 }
 
