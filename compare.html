@@ -11,13 +11,17 @@
         <nav>
             <div class="container">
                 <div class="logo">
-                    <h1>智能驾驶方案对比</h1>
+                    <h1 data-i18n="site_title">智能驾驶方案对比</h1>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="brands.html">品牌列表</a></li>
-                    <li><a href="compare.html">方案对比</a></li>
-                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                    <li><a href="brands.html" data-i18n="nav_brands">品牌列表</a></li>
+                    <li><a href="compare.html" data-i18n="nav_compare">方案对比</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
+                    <li class="language-switcher">
+                        <button id="lang-zh" class="lang-btn active" data-lang="zh">中文</button>
+                        <button id="lang-en" class="lang-btn" data-lang="en">English</button>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -26,31 +30,31 @@
     <main>
         <section class="compare-page">
             <div class="container">
-                <h2>智能驾驶方案对比</h2>
-                <p>选择多个品牌，对比它们的智能驾驶方案性能和特点</p>
+                <h2 data-i18n="compare_title">智能驾驶方案对比</h2>
+                <p data-i18n="compare_desc">选择多个品牌，对比它们的智能驾驶方案性能和特点</p>
                 
                 <div class="compare-container">
                     <div class="compare-selector">
-                        <h3>选择要对比的品牌</h3>
+                        <h3 data-i18n="compare_selector_title">选择要对比的品牌</h3>
                         <div class="brand-selectors">
                             <div class="brand-selector-item">
-                                <label for="brand1">品牌 1</label>
+                                <label for="brand1" data-i18n="compare_brand1">品牌 1</label>
                                 <select class="brand-selector" id="brand1"></select>
                             </div>
                             <div class="brand-selector-item">
-                                <label for="brand2">品牌 2</label>
+                                <label for="brand2" data-i18n="compare_brand2">品牌 2</label>
                                 <select class="brand-selector" id="brand2"></select>
                             </div>
                             <div class="brand-selector-item">
-                                <label for="brand3">品牌 3</label>
+                                <label for="brand3" data-i18n="compare_brand3">品牌 3</label>
                                 <select class="brand-selector" id="brand3"></select>
                             </div>
                             <div class="brand-selector-item">
-                                <label for="brand4">品牌 4</label>
+                                <label for="brand4" data-i18n="compare_brand4">品牌 4</label>
                                 <select class="brand-selector" id="brand4"></select>
                             </div>
                         </div>
-                        <button id="compareBtn" class="btn btn-primary">开始对比</button>
+                        <button id="compareBtn" class="btn btn-primary" data-i18n="compare_start">开始对比</button>
                     </div>
                     
                     <div class="compare-table-container">
@@ -69,7 +73,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 智能驾驶方案对比网站. 保留所有权利.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 智能驾驶方案对比网站. 保留所有权利. | 版本 v1.1.0</p>
         </div>
     </footer>
 
