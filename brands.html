@@ -11,13 +11,17 @@
         <nav>
             <div class="container">
                 <div class="logo">
-                    <h1>智能驾驶方案对比</h1>
+                    <h1 data-i18n="site_title">智能驾驶方案对比</h1>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="brands.html">品牌列表</a></li>
-                    <li><a href="compare.html">方案对比</a></li>
-                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                    <li><a href="brands.html" data-i18n="nav_brands">品牌列表</a></li>
+                    <li><a href="compare.html" data-i18n="nav_compare">方案对比</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
+                    <li class="language-switcher">
+                        <button id="lang-zh" class="lang-btn active" data-lang="zh">中文</button>
+                        <button id="lang-en" class="lang-btn" data-lang="en">English</button>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -26,17 +30,17 @@
     <main>
         <section class="brands-page">
             <div class="container">
-                <h2>中外智能驾驶品牌方案</h2>
-                <p>以下是全球主流智能驾驶品牌及其方案的详细信息</p>
+                <h2 data-i18n="brands_title">中外智能驾驶品牌方案</h2>
+                <p data-i18n="brands_desc">以下是全球主流智能驾驶品牌及其方案的详细信息</p>
                 
                 <!-- 筛选功能 -->
                 <div class="filter-section">
-                    <h3>筛选条件</h3>
+                    <h3 data-i18n="filter_title">筛选条件</h3>
                     <div class="filter-grid">
                         <div class="filter-item">
-                            <label for="originFilter">品牌 origin</label>
+                            <label for="originFilter" data-i18n="filter_origin">品牌 origin</label>
                             <select id="originFilter">
-                                <option value="">全部</option>
+                                <option value="" data-i18n="filter_all">全部</option>
                                 <option value="中国">中国</option>
                                 <option value="美国">美国</option>
                                 <option value="德国">德国</option>
@@ -46,9 +50,9 @@
                             </select>
                         </div>
                         <div class="filter-item">
-                            <label for="levelFilter">自动驾驶等级</label>
+                            <label for="levelFilter" data-i18n="filter_level">自动驾驶等级</label>
                             <select id="levelFilter">
-                                <option value="">全部</option>
+                                <option value="" data-i18n="filter_all">全部</option>
                                 <option value="L2">L2</option>
                                 <option value="L2+">L2+</option>
                                 <option value="L2-L3">L2-L3</option>
@@ -56,17 +60,17 @@
                             </select>
                         </div>
                         <div class="filter-item">
-                            <label for="sensorFilter">传感器配置</label>
+                            <label for="sensorFilter" data-i18n="filter_sensor">传感器配置</label>
                             <select id="sensorFilter">
-                                <option value="">全部</option>
-                                <option value="激光雷达">激光雷达</option>
-                                <option value="摄像头">摄像头为主</option>
+                                <option value="" data-i18n="filter_all">全部</option>
+                                <option value="激光雷达" data-i18n="filter_sensor_lidar">激光雷达</option>
+                                <option value="摄像头" data-i18n="filter_sensor_camera">摄像头为主</option>
                             </select>
                         </div>
                     </div>
                     <div class="filter-actions">
-                        <button id="filterBtn" class="btn btn-primary">应用筛选</button>
-                        <button id="resetBtn" class="btn btn-secondary">重置筛选</button>
+                        <button id="filterBtn" class="btn btn-primary" data-i18n="filter_apply">应用筛选</button>
+                        <button id="resetBtn" class="btn btn-secondary" data-i18n="filter_reset">重置筛选</button>
                     </div>
                 </div>
                 
@@ -79,7 +83,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 智能驾驶方案对比网站. 保留所有权利.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 智能驾驶方案对比网站. 保留所有权利. | 版本 v1.1.0</p>
         </div>
     </footer>
 
