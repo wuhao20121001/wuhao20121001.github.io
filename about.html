@@ -11,13 +11,17 @@
         <nav>
             <div class="container">
                 <div class="logo">
-                    <h1>智能驾驶方案对比</h1>
+                    <h1 data-i18n="site_title">智能驾驶方案对比</h1>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="brands.html">品牌列表</a></li>
-                    <li><a href="compare.html">方案对比</a></li>
-                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                    <li><a href="brands.html" data-i18n="nav_brands">品牌列表</a></li>
+                    <li><a href="compare.html" data-i18n="nav_compare">方案对比</a></li>
+                    <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
+                    <li class="language-switcher">
+                        <button id="lang-zh" class="lang-btn active" data-lang="zh">中文</button>
+                        <button id="lang-en" class="lang-btn" data-lang="en">English</button>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -26,51 +30,51 @@
     <main>
         <section class="about-page">
             <div class="container">
-                <h2>关于我们</h2>
+                <h2 data-i18n="about_title">关于我们</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <h3>我们的使命</h3>
-                        <p>智能驾驶技术正在改变我们的出行方式，各种品牌和方案层出不穷。我们的使命是为用户提供全面、客观、专业的智能驾驶方案对比信息，帮助用户了解不同品牌智能驾驶技术的特点、性能和应用场景，从而做出更明智的选择。</p>
+                        <h3 data-i18n="about_mission">我们的使命</h3>
+                        <p data-i18n="about_mission_desc">智能驾驶技术正在改变我们的出行方式，各种品牌和方案层出不穷。我们的使命是为用户提供全面、客观、专业的智能驾驶方案对比信息，帮助用户了解不同品牌智能驾驶技术的特点、性能和应用场景，从而做出更明智的选择。</p>
                         
-                        <h3>我们的内容</h3>
-                        <p>我们收集了全球主流智能驾驶品牌的方案信息，包括：</p>
+                        <h3 data-i18n="about_content">我们的内容</h3>
+                        <p data-i18n="about_content_desc">我们收集了全球主流智能驾驶品牌的方案信息，包括：</p>
                         <ul>
-                            <li>中国品牌：蔚来、小鹏、理想、华为等</li>
-                            <li>外国品牌：特斯拉、奔驰、宝马、奥迪、丰田、本田等</li>
+                            <li data-i18n="about_chinese_brands">中国品牌：蔚来、小鹏、理想、华为等</li>
+                            <li data-i18n="about_foreign_brands">外国品牌：特斯拉、奔驰、宝马、奥迪、丰田、本田等</li>
                         </ul>
-                        <p>每个方案都包含详细的技术参数、功能特点、价格信息以及优缺点分析。</p>
+                        <p data-i18n="about_content_detail">每个方案都包含详细的技术参数、功能特点、价格信息以及优缺点分析。</p>
                         
-                        <h3>我们的优势</h3>
+                        <h3 data-i18n="about_advantages">我们的优势</h3>
                         <ul>
-                            <li><strong>全面覆盖：</strong>涵盖国内外主流智能驾驶品牌和方案</li>
-                            <li><strong>专业分析：</strong>深入解析各方案的技术特点和性能表现</li>
-                            <li><strong>直观对比：</strong>可视化对比工具，一目了然各方案差异</li>
-                            <li><strong>持续更新：</strong>实时追踪智能驾驶技术的最新发展</li>
+                            <li data-i18n="about_advantage_comprehensive"><strong>全面覆盖：</strong>涵盖国内外主流智能驾驶品牌和方案</li>
+                            <li data-i18n="about_advantage_professional"><strong>专业分析：</strong>深入解析各方案的技术特点和性能表现</li>
+                            <li data-i18n="about_advantage_intuitive"><strong>直观对比：</strong>可视化对比工具，一目了然各方案差异</li>
+                            <li data-i18n="about_advantage_updated"><strong>持续更新：</strong>实时追踪智能驾驶技术的最新发展</li>
                         </ul>
                         
-                        <h3>版本更新</h3>
+                        <h3 data-i18n="about_version">版本更新</h3>
                         <div class="version-history">
                             <div class="version-item">
                                 <h4>v1.1.0 (2025-11-30)</h4>
                                 <ul>
-                                    <li>全面升级UI设计，采用现代化渐变色彩和动画效果</li>
-                                    <li>增强品牌列表页面，添加筛选功能（品牌 origin、自动驾驶等级、传感器配置）</li>
-                                    <li>优化对比页面，添加对比结果分析功能</li>
-                                    <li>更新华为智能驾驶方案为最新的乾崑智驾 ADS 4</li>
-                                    <li>添加比亚迪、长城、吉利、福特、通用、沃尔沃、现代等品牌</li>
-                                    <li>改进响应式设计，提升移动端体验</li>
-                                    <li>优化代码结构，提高可维护性</li>
-                                    <li>添加更多动画效果和过渡效果，提升用户体验</li>
+                                    <li data-i18n="version_1_1_0_ui">全面升级UI设计，采用现代化渐变色彩和动画效果</li>
+                                    <li data-i18n="version_1_1_0_filter">增强品牌列表页面，添加筛选功能（品牌 origin、自动驾驶等级、传感器配置）</li>
+                                    <li data-i18n="version_1_1_0_compare">优化对比页面，添加对比结果分析功能</li>
+                                    <li data-i18n="version_1_1_0_huawei">更新华为智能驾驶方案为最新的乾崑智驾 ADS 4</li>
+                                    <li data-i18n="version_1_1_0_brands">添加比亚迪、长城、吉利、福特、通用、沃尔沃、现代等品牌</li>
+                                    <li data-i18n="version_1_1_0_responsive">改进响应式设计，提升移动端体验</li>
+                                    <li data-i18n="version_1_1_0_code">优化代码结构，提高可维护性</li>
+                                    <li data-i18n="version_1_1_0_animations">添加更多动画效果和过渡效果，提升用户体验</li>
                                 </ul>
                             </div>
                             <div class="version-item">
                                 <h4>v1.0.0 (2025-11-29)</h4>
                                 <ul>
-                                    <li>初始版本发布</li>
-                                    <li>支持10个智能驾驶品牌的对比</li>
-                                    <li>实现品牌列表和详情展示</li>
-                                    <li>支持多品牌对比功能</li>
-                                    <li>响应式设计，适配不同设备</li>
+                                    <li data-i18n="version_1_0_0_release">初始版本发布</li>
+                                    <li data-i18n="version_1_0_0_brands">支持10个智能驾驶品牌的对比</li>
+                                    <li data-i18n="version_1_0_0_list">实现品牌列表和详情展示</li>
+                                    <li data-i18n="version_1_0_0_compare">支持多品牌对比功能</li>
+                                    <li data-i18n="version_1_0_0_responsive">响应式设计，适配不同设备</li>
                                 </ul>
                             </div>
                         </div>
@@ -85,7 +89,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 智能驾驶方案对比网站. 保留所有权利.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 智能驾驶方案对比网站. 保留所有权利. | 版本 v1.1.0</p>
         </div>
     </footer>
 
