@@ -1,3 +1,202 @@
+// 中英文翻译数据
+const i18n = {
+    zh: {
+        site_title: '智能驾驶方案对比',
+        nav_home: '首页',
+        nav_brands: '品牌列表',
+        nav_compare: '方案对比',
+        nav_about: '关于我们',
+        hero_title: '中外智能驾驶方案全面对比',
+        hero_desc: '深入分析全球各品牌智能驾驶技术的性能、特点和应用场景',
+        hero_btn_brands: '查看品牌列表',
+        hero_btn_compare: '开始对比',
+        features_title: '我们的优势',
+        feature_comprehensive: '全面覆盖',
+        feature_comprehensive_desc: '涵盖国内外主流智能驾驶品牌和方案',
+        feature_professional: '专业分析',
+        feature_professional_desc: '深入解析各方案的技术特点和性能表现',
+        feature_intuitive: '直观对比',
+        feature_intuitive_desc: '可视化对比工具，一目了然各方案差异',
+        feature_updated: '持续更新',
+        feature_updated_desc: '实时追踪智能驾驶技术的最新发展',
+        brands_preview_title: '热门品牌',
+        brands_title: '中外智能驾驶品牌方案',
+        brands_desc: '以下是全球主流智能驾驶品牌及其方案的详细信息',
+        filter_title: '筛选条件',
+        filter_origin: '品牌 origin',
+        filter_level: '自动驾驶等级',
+        filter_sensor: '传感器配置',
+        filter_all: '全部',
+        filter_sensor_lidar: '激光雷达',
+        filter_sensor_camera: '摄像头为主',
+        filter_apply: '应用筛选',
+        filter_reset: '重置筛选',
+        compare_title: '智能驾驶方案对比',
+        compare_desc: '选择多个品牌，对比它们的智能驾驶方案性能和特点',
+        compare_selector_title: '选择要对比的品牌',
+        compare_brand1: '品牌 1',
+        compare_brand2: '品牌 2',
+        compare_brand3: '品牌 3',
+        compare_brand4: '品牌 4',
+        compare_start: '开始对比',
+        about_title: '关于我们',
+        about_mission: '我们的使命',
+        about_mission_desc: '智能驾驶技术正在改变我们的出行方式，各种品牌和方案层出不穷。我们的使命是为用户提供全面、客观、专业的智能驾驶方案对比信息，帮助用户了解不同品牌智能驾驶技术的特点、性能和应用场景，从而做出更明智的选择。',
+        about_content: '我们的内容',
+        about_content_desc: '我们收集了全球主流智能驾驶品牌的方案信息，包括：',
+        about_chinese_brands: '中国品牌：蔚来、小鹏、理想、华为等',
+        about_foreign_brands: '外国品牌：特斯拉、奔驰、宝马、奥迪、丰田、本田等',
+        about_content_detail: '每个方案都包含详细的技术参数、功能特点、价格信息以及优缺点分析。',
+        about_advantages: '我们的优势',
+        about_advantage_comprehensive: '<strong>全面覆盖：</strong>涵盖国内外主流智能驾驶品牌和方案',
+        about_advantage_professional: '<strong>专业分析：</strong>深入解析各方案的技术特点和性能表现',
+        about_advantage_intuitive: '<strong>直观对比：</strong>可视化对比工具，一目了然各方案差异',
+        about_advantage_updated: '<strong>持续更新：</strong>实时追踪智能驾驶技术的最新发展',
+        about_version: '版本更新',
+        version_1_1_0_ui: '全面升级UI设计，采用现代化渐变色彩和动画效果',
+        version_1_1_0_filter: '增强品牌列表页面，添加筛选功能（品牌 origin、自动驾驶等级、传感器配置）',
+        version_1_1_0_compare: '优化对比页面，添加对比结果分析功能',
+        version_1_1_0_huawei: '更新华为智能驾驶方案为最新的乾崑智驾 ADS 4',
+        version_1_1_0_brands: '添加比亚迪、长城、吉利、福特、通用、沃尔沃、现代等品牌',
+        version_1_1_0_responsive: '改进响应式设计，提升移动端体验',
+        version_1_1_0_code: '优化代码结构，提高可维护性',
+        version_1_1_0_animations: '添加更多动画效果和过渡效果，提升用户体验',
+        version_1_0_0_release: '初始版本发布',
+        version_1_0_0_brands: '支持10个智能驾驶品牌的对比',
+        version_1_0_0_list: '实现品牌列表和详情展示',
+        version_1_0_0_compare: '支持多品牌对比功能',
+        version_1_0_0_responsive: '响应式设计，适配不同设备',
+        footer_copyright: '&copy; 2025 智能驾驶方案对比网站. 保留所有权利. | 版本 v1.1.0'
+    },
+    en: {
+        site_title: 'Smart Driving Solutions Comparison',
+        nav_home: 'Home',
+        nav_brands: 'Brands',
+        nav_compare: 'Compare',
+        nav_about: 'About',
+        hero_title: 'Comprehensive Comparison of Smart Driving Solutions',
+        hero_desc: 'In-depth analysis of performance, features and application scenarios of smart driving technologies from global brands',
+        hero_btn_brands: 'View Brands',
+        hero_btn_compare: 'Start Comparison',
+        features_title: 'Our Advantages',
+        feature_comprehensive: 'Comprehensive Coverage',
+        feature_comprehensive_desc: 'Covers mainstream smart driving brands and solutions at home and abroad',
+        feature_professional: 'Professional Analysis',
+        feature_professional_desc: 'In-depth analysis of technical characteristics and performance of each solution',
+        feature_intuitive: 'Intuitive Comparison',
+        feature_intuitive_desc: 'Visual comparison tool for clear differences between solutions',
+        feature_updated: 'Continuous Updates',
+        feature_updated_desc: 'Real-time tracking of the latest developments in smart driving technology',
+        brands_preview_title: 'Popular Brands',
+        brands_title: 'Smart Driving Brand Solutions',
+        brands_desc: 'Below are detailed information about mainstream smart driving brands and their solutions worldwide',
+        filter_title: 'Filter Conditions',
+        filter_origin: 'Brand Origin',
+        filter_level: 'Autopilot Level',
+        filter_sensor: 'Sensor Configuration',
+        filter_all: 'All',
+        filter_sensor_lidar: 'LiDAR',
+        filter_sensor_camera: 'Camera-based',
+        filter_apply: 'Apply Filter',
+        filter_reset: 'Reset Filter',
+        compare_title: 'Smart Driving Solutions Comparison',
+        compare_desc: 'Select multiple brands to compare their smart driving solutions performance and features',
+        compare_selector_title: 'Select Brands to Compare',
+        compare_brand1: 'Brand 1',
+        compare_brand2: 'Brand 2',
+        compare_brand3: 'Brand 3',
+        compare_brand4: 'Brand 4',
+        compare_start: 'Start Comparison',
+        about_title: 'About Us',
+        about_mission: 'Our Mission',
+        about_mission_desc: 'Smart driving technology is changing our way of travel, with various brands and solutions emerging. Our mission is to provide users with comprehensive, objective, and professional smart driving solutions comparison information, helping users understand the characteristics, performance, and application scenarios of different brands\' smart driving technologies, thus making more informed choices.',
+        about_content: 'Our Content',
+        about_content_desc: 'We have collected information on mainstream smart driving brands worldwide, including:',
+        about_chinese_brands: 'Chinese brands: NIO, Xpeng, Li Auto, Huawei, etc.',
+        about_foreign_brands: 'Foreign brands: Tesla, Mercedes-Benz, BMW, Audi, Toyota, Honda, etc.',
+        about_content_detail: 'Each solution includes detailed technical parameters, functional features, price information, as well as advantages and disadvantages analysis.',
+        about_advantages: 'Our Advantages',
+        about_advantage_comprehensive: '<strong>Comprehensive Coverage:</strong> Covers mainstream smart driving brands and solutions at home and abroad',
+        about_advantage_professional: '<strong>Professional Analysis:</strong> In-depth analysis of technical characteristics and performance of each solution',
+        about_advantage_intuitive: '<strong>Intuitive Comparison:</strong> Visual comparison tool for clear differences between solutions',
+        about_advantage_updated: '<strong>Continuous Updates:</strong> Real-time tracking of the latest developments in smart driving technology',
+        about_version: 'Version Updates',
+        version_1_1_0_ui: 'Comprehensive UI design upgrade with modern gradient colors and animation effects',
+        version_1_1_0_filter: 'Enhanced brand list page with filter function (brand origin, autopilot level, sensor configuration)',
+        version_1_1_0_compare: 'Optimized comparison page with comparison result analysis function',
+        version_1_1_0_huawei: 'Updated Huawei smart driving solution to the latest Kunpeng Smart Driving ADS 4',
+        version_1_1_0_brands: 'Added brands: BYD, Great Wall, Geely, Ford, GM, Volvo, Hyundai, etc.',
+        version_1_1_0_responsive: 'Improved responsive design for better mobile experience',
+        version_1_1_0_code: 'Optimized code structure for better maintainability',
+        version_1_1_0_animations: 'Added more animation and transition effects to enhance user experience',
+        version_1_0_0_release: 'Initial version released',
+        version_1_0_0_brands: 'Support for comparison of 10 smart driving brands',
+        version_1_0_0_list: 'Implemented brand list and detail display',
+        version_1_0_0_compare: 'Support for multi-brand comparison function',
+        version_1_0_0_responsive: 'Responsive design for different devices',
+        footer_copyright: '&copy; 2025 Smart Driving Solutions Comparison. All rights reserved. | Version v1.1.0'
+    }
+};
+
+// 当前语言
+let currentLang = localStorage.getItem('lang') || navigator.language.startsWith('zh') ? 'zh' : 'en';
+
+// 语言切换函数
+function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    
+    // 更新语言切换按钮状态
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.getElementById(`lang-${lang}`).classList.add('active');
+    
+    // 切换页面上的所有文本
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (i18n[lang][key]) {
+            // 处理HTML内容
+            if (element.tagName === 'LI' && element.innerHTML.includes('<strong>')) {
+                element.innerHTML = i18n[lang][key];
+            } else {
+                element.textContent = i18n[lang][key];
+            }
+        }
+    });
+    
+    // 切换选项框中的文本
+    document.querySelectorAll('option[data-i18n]').forEach(option => {
+        const key = option.getAttribute('data-i18n');
+        if (i18n[lang][key]) {
+            option.textContent = i18n[lang][key];
+        }
+    });
+    
+    // 重新初始化动态内容
+    if (window.location.pathname.includes('brands.html')) {
+        // 重新加载品牌列表
+        if (typeof initBrandsPage === 'function') {
+            initBrandsPage();
+        }
+    } else if (window.location.pathname.includes('compare.html')) {
+        // 重新加载对比页面
+        if (typeof initComparePage === 'function') {
+            initComparePage();
+        }
+    }
+}
+
+// 页面加载完成后初始化语言
+window.addEventListener('DOMContentLoaded', function() {
+    // 初始化语言切换按钮事件
+    document.getElementById('lang-zh').addEventListener('click', () => switchLanguage('zh'));
+    document.getElementById('lang-en').addEventListener('click', () => switchLanguage('en'));
+    
+    // 设置初始语言
+    switchLanguage(currentLang);
+});
+
 // 智能驾驶品牌数据
 const drivingBrands = {
     'tesla': {
